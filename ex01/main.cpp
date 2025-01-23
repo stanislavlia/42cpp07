@@ -1,32 +1,29 @@
-#include "Iter.hpp"
+#include "iter.hpp"
 #include <algorithm>
 
 
-template <typename T>
-void    iter(T array[], size_t length, void func(T &))
-{
-    size_t i = 0;
-
-
-    while (i < length)
-    {
-        func(array[i]);
-        i++;
-    }
-    
-    return ;
-};
-
-
+//==============example of functions to apply==========================
 void    square(int &num)
 {
     num = num * num;
 };
 
+
+
+float   square_and_return(int &num)
+{
+    num = num * num;
+    return float(num);
+};
+
+
+
 void    uppper(std::string &str)
 {
     std::transform(str.begin(), str.end(), str.begin(), ::toupper);
 }
+
+
 
 
 int main()
@@ -42,6 +39,15 @@ int main()
     iter(intarrays, 5, square);
 
     std::cout << "=================INT ARRAY ELEMENTS AFTER SQUARE:==============" << std::endl;
+    std::cout << intarrays[0] << std::endl;
+    std::cout << intarrays[1] << std::endl;
+    std::cout << intarrays[2] << std::endl;
+    std::cout << intarrays[3] << std::endl;
+    std::cout << intarrays[4] << std::endl;
+
+
+    iter(intarrays, 5, square_and_return);
+    std::cout << "=================INT ARRAY ELEMENTS AFTER ONE MORE SQUARE (func return something):==============" << std::endl;
     std::cout << intarrays[0] << std::endl;
     std::cout << intarrays[1] << std::endl;
     std::cout << intarrays[2] << std::endl;

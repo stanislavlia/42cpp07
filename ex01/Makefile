@@ -1,4 +1,4 @@
-name = Iter
+name = iter
 cc = c++
 cflags = -Wall -Werror -Wextra -std=c++98
 src = main.cpp
