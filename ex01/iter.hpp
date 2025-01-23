@@ -6,7 +6,7 @@
 #include <cstddef>
 
 template <typename T, typename t>
-void    iter(T array[], size_t length, t func(T &))
+void    iter(T array[], size_t length, t func)
 {
     size_t i = 0;
 
